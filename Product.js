@@ -1,19 +1,21 @@
 export default class Product {
-    static codecount = 0;
-
-    constructor(title, description, price, thumbnail, stock){
+    
+    constructor(title, description, price, thumbnail, code, stock){
         this.title = title;
         this.description = description;
         this.price = price;
         this.thumbnail = thumbnail;
-        Product.codecount++;
-        this.code = Product.codecount;
+        this.code = code;
         this.stock = stock;
+        this.id = Product.incrementedId()
     }
 
-    
-
-
-
+    static incrementedId(){
+      if(this.IdIncremented){
+        this.IdIncremented++
+      }else{
+        this.IdIncremented = 1
+      }return this.IdIncremented  
+    }
 }
 
